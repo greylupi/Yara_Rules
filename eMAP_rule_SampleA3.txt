@@ -3,8 +3,8 @@ rule SampleA3
 {
  meta:
  description = "Rule to find SampleA3.exe"
- author = "Ali Hadi"
- date = 12012019
+ author = "Martin Reato"
+ date = 24042022
  strings:
  $mz = {4d 5a}
  $nc = "c:\\netcat\\Release\\netcat.pdb" nocase ascii wide
