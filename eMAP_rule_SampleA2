@@ -3,8 +3,8 @@ rule SampleA2
 {
  meta:
  description = "Rule to find SampleA2.exe"
- author = "Ali Hadi"
- date = 12012019
+ author = "Martin Reato"
+ date = 21042022
  strings:
  $mz = {4d 5a}
  $str1 = "HadihAli"
