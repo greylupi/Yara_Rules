@@ -3,8 +3,8 @@ rule SampleA4
 {
  meta:
  description = "Rule to find SampleA4.exe"
- author = "Ali Hadi"
- date = 12012019
+ author = "Martin Reato"
+ date = 24042022
  strings:
  $mz = {4d 5a}
  $str1 = "PuTTY User Manual" nocase ascii wide
