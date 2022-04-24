@@ -1,0 +1,16 @@
+import "hash"
+rule SampleA2
+{
+ meta:
+ description = "Rule to find SampleA2.exe"
+ author = "Ali Hadi"
+ date = 12012019
+ strings:
+ $mz = {4d 5a}
+ $str1 = "HadihAli"
+ $str2 = "C:\\local0\\asf\\release\\build-2.2.14\\support\\Release\\ab.pdb"
+ condition:
+ ($mz at 0) and ( hash.md5(0, filesize) == "67b561db4ab848aa2e6d4c470cdea7d0"
+ or hash.sha1(0, filesize) == "9d1936bb4e9afe370202cefd196fb71cfa348c67")
+ and ($str1 or $str2)
+}
