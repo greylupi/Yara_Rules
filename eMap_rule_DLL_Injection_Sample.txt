@@ -1,0 +1,15 @@
+import "hash"
+import "pe"
+
+rule detectRDI_SAMPLE
+{
+	strings:
+		$str1 = "MAP DLL Injections" nocase ascii wide
+		$str2 = "Hello from Injected DLL" nocase ascii wide
+	condition:
+	( any of ($str*))
+	or
+	(hash.md5(0,filesize) == "7733ce3f656238816e347e4291d0cc36"
+	or hash.sha1(0,filesize) == "0ac77079812a60c183a658c0f6fee967b3a68112"
+	or hash.sha256(0,filesize) == "d846bdd426689b439d55ef999b4dae5494be524e4164ac01693a5ba8c8ef9c7d")
+}
